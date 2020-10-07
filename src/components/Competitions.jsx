@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import NavBar from './NavBar';
+import NavBar from "./NavBar";
 
 class Competitions extends Component {
   state = {
@@ -11,9 +11,11 @@ class Competitions extends Component {
   };
   async componentDidMount() {
     const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
-    const { data: competitions } = await axios.get(
-      `${REACT_APP_BASE_URL}/api/competition/`
-    );
+    const {
+      data: competitions,
+    } = await axios.get(`${REACT_APP_BASE_URL}/api/competition/`, {
+      headers: { "Content-Type": "application/json" },
+    });
     this.setState({
       competitions,
     });
@@ -47,7 +49,7 @@ class Competitions extends Component {
 
     return (
       <div className="competitions-page">
-        <NavBar/>
+        <NavBar />
         <div className="controls">
           <input
             type="text"

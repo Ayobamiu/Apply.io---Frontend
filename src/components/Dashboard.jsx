@@ -9,12 +9,16 @@ class Dashboard extends Component {
   };
   async componentDidMount() {
     const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
-    const { data: competitions } = await axios.get(
-      `${REACT_APP_BASE_URL}/api/competition/`
-    );
-    const { data: entries } = await axios.get(
-      `${REACT_APP_BASE_URL}/api/entry/`
-    );
+    const {
+      data: competitions,
+    } = await axios.get(`${REACT_APP_BASE_URL}/api/competition/`, {
+      headers: { "Content-Type": "application/json" },
+    });
+    const {
+      data: entries,
+    } = await axios.get(`${REACT_APP_BASE_URL}/api/entry/`, {
+      headers: { "Content-Type": "application/json" },
+    });
     this.setState({
       competitions,
       entries,

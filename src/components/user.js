@@ -12,5 +12,7 @@ export function getLoggedInUser() {
 }
 
 export function getProfiles() {
-  return axios.get(`${REACT_APP_BASE_URL}/api/profile/`);
+  return axios.get(`${REACT_APP_BASE_URL}/api/profile/`, {
+    headers: { "Content-Type": "application/json" },
+  });
 }

@@ -8,9 +8,11 @@ class Competition extends Component {
   async componentDidMount() {
     const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
     const { slug } = this.props.match.params;
-    const { data: competition } = await axios.get(
-      `${REACT_APP_BASE_URL}/api/competition/${slug}`
-    );
+    const {
+      data: competition,
+    } = await axios.get(`${REACT_APP_BASE_URL}/api/competition/${slug}`, {
+      headers: { "Content-Type": "application/json" },
+    });
     this.setState({
       competition,
     });
