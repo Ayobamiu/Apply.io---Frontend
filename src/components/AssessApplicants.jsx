@@ -7,16 +7,11 @@ class AssessApplicants extends Component {
     return (
       <div className="assess-applicants">
         <div className="text">
-          <i className="fa fa-book"></i>
           <h1>Assess Applicants</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            perferendis vero, nostrum iste rerum numquam esse quis ratione?
-            Culpa fuga ipsa mollitia eveniet at, cum natus beatae odio hic sed!
+            We provide you with top-notch sorting algorithm to access and
+            grade participants' tests
           </p>
-        </div>
-        <div className="media">
-          <img src={assess_applicant} width="300px" alt="" />
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ import SocialGallery from "./SocialGallery";
 import InstantReward from "./InstantReward";
 
 class Operations extends Component {
-  state = {};
+  state = {}; 
   render() {
     return (
       <React.Fragment>
@@ -38,7 +38,6 @@ class Operations extends Component {
         </div>
         <CompetitionDetails />
         <AssessApplicants />
-        <SocialGallery />
         <InstantReward />
       </React.Fragment>
     );

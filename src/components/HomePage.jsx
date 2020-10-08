@@ -9,7 +9,7 @@ class HomePage extends Component {
   state = {};
   render() {
     return (
-      <React.Fragment>
+      <React.Fragment> 
         <div className="section-one">
           <NavBar />
           <Landing />

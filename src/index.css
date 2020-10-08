@@ -13,16 +13,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Lato", sans-serif;
 }
 
 a {
@@ -31,10 +22,11 @@ a {
 
 .section-one {
   position: relative;
-  min-height: 500px;
+  /* min-height: 500px; */
   background: linear-gradient(rgba(36, 37, 130, 0.5), rgba(47, 47, 162, 0.5)),
     url("./images/background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   color: #ffffff;
 }
@@ -105,15 +97,18 @@ a {
 
 /* Landing page*/
 .landing {
-  padding: 15px 150px;
+  text-align: center;
+  padding: 20px;
 }
 .landing h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 .landing p {
   font-size: 1.4rem;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 .landing button {
   margin-top: 20px;
@@ -124,9 +119,6 @@ a {
   border-radius: 20px;
 }
 @media screen and (max-width: 850px) {
-  .landing {
-    padding: 15px 30px;
-  }
   .landing h1 {
     font-size: 2.1rem;
     margin-bottom: 10px;
@@ -179,183 +171,268 @@ a {
 .operation-one h4 {
   margin-bottom: 10px;
   color: #242582;
+  font-weight: 400;
 }
 .operation-one p {
   color: #99738e;
   margin-bottom: 10px;
+  font-weight: 300;
 }
 @media screen and (max-width: 650px) {
   .operation-one {
     flex: 0 1 60%;
+  }
+  .operation-one p {
+    color: #99738e;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .operation-one i {
+    padding: 20px;
+    font-size: 2rem;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 10px;
   }
 }
 
 /*competition-details*/
 .competition-details {
   color: #fff;
-  background-color: #242582;
+  /* background-color: #242582; */
+  background-image: linear-gradient(
+      90deg,
+      rgba(36, 37, 130, 1) 0%,
+      rgba(36, 37, 130, 0.9) 50%,
+      rgba(36, 37, 130, 0.1)
+    ),
+    url("./images/racing.png");
+  background-position: right;
+  background-size: auto;
+  background-repeat: no-repeat;
   display: flex;
   min-height: 500px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
-.competition-details .media {
-  flex: 0 0 40%;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-}
+
 .competition-details .text {
-  flex: 0 1 40%;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
+  width: 80%;
 }
-.competition-details .text h1,
-.competition-details .text p {
+.competition-details .text h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 700;
   margin-bottom: 20px;
-  font-weight: normal;
 }
-.competition-details .media img {
-  border-radius: 10px;
+.competition-details .text p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
 }
+.competition-details button {
+  padding: 10px 0;
+  margin: 20px 10px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 3px solid #f64c72;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(246, 76, 114, 1) 50%
+  );
+  background-size: 220%;
+  transition: all 0.3s;
+}
+.competition-details button:hover {
+  background-size: -100%;
+  background-position: 100%;
+}
+@media screen and (max-width: 600px) {
+  .competition-details {
+    background-image: linear-gradient(
+        90deg,
+        rgba(36, 37, 130, 1) 0%,
+        rgba(36, 37, 130, 0.7) 50%,
+        rgba(36, 37, 130, 0.1)
+      ),
+      url("./images/racing.png");
+  }
+  .competition-details .text {
+    width: 100%;
+  }
+  .competition-details .text h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+  .competition-details .text p {
+    font-size: 18px;
+  }
+}
+
 /*assess-applicants*/
 .assess-applicants {
-  background-color: rgb(255, 255, 255);
+  color: #fff;
+  background-image: linear-gradient(
+      90deg,
+      rgba(36, 37, 130, 0.1) 0%,
+      rgba(36, 37, 130, 0.9) 50%,
+      rgba(36, 37, 130, 1)
+    ),
+    url("./images/assess.jpg");
+  background-position: left;
+  background-size: auto;
+  background-repeat: no-repeat;
   display: flex;
   min-height: 500px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding-left: 30px;
 }
-.assess-applicants .media {
-  flex: 0 0 40%;
-  padding: 10px;
-  text-align: center;
-  margin: 10px;
-}
-.assess-applicants .text h1,
-.assess-applicants .text p {
-  margin-bottom: 20px;
-  font-weight: normal;
-}
+
 .assess-applicants .text {
-  flex: 0 0 40%;
-  padding: 10px;
-  margin: 10px;
+  text-align: right;
+  padding: 20px;
+  width: 80%;
 }
-.assess-applicants .media img {
-  border-radius: 10px;
-}
-/*social-gallery*/
-.social-gallery {
-  background: linear-gradient(270deg, #ddd, #fff);
-  display: flex;
-  min-height: 500px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-.social-gallery .media {
-  flex: 0 0 40%;
-  padding: 10px;
-  text-align: center;
-  margin: 10px;
-}
-.social-gallery .text h1,
-.social-gallery .text p {
+.assess-applicants .text h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 700;
   margin-bottom: 20px;
-  font-weight: normal;
 }
-.social-gallery .text {
-  flex: 0 0 40%;
-  padding: 10px;
-  margin: 10px;
+.assess-applicants .text p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
 }
-.social-gallery .media img {
-  border-radius: 10px;
+.assess-applicants button {
+  padding: 10px 0;
+  margin: 20px 10px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 3px solid #f64c72;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(246, 76, 114, 1) 50%
+  );
+  background-size: 220%;
+  transition: all 0.3s;
 }
+.assess-applicants button:hover {
+  background-size: -100%;
+  background-position: 100%;
+}
+@media screen and (max-width: 600px) {
+  .assess-applicants {
+    background-image: linear-gradient(
+        90deg,
+        rgba(36, 37, 130, 0.1) 0%,
+        rgba(36, 37, 130, 0.7) 50%,
+        rgba(36, 37, 130, 1)
+      ),
+      url("./images/assess.jpg");
+    background-size: cover;
+  }
+
+  .assess-applicants .text {
+    width: 100%;
+  }
+  .assess-applicants .text h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+  .assess-applicants .text p {
+    font-size: 18px;
+  }
+}
+
 /*instant-reward*/
 .instant-reward {
   color: #fff;
-  background-color: #242582;
+  background-image: linear-gradient(
+      180deg,
+      rgba(36, 37, 130, 0.2) 0%,
+      rgba(36, 37, 130, 0.95) 70%,
+      rgba(36, 37, 130, 1)
+    ),
+    url("./images/reward.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   min-height: 500px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
-.instant-reward .media {
-  flex: 0 0 40%;
-  padding: 10px;
-  text-align: center;
-  margin: 10px;
-}
-.instant-reward .text h1,
-.instant-reward .text p {
-  margin-bottom: 20px;
-  font-weight: normal;
-}
-.instant-reward .text {
-  flex: 0 0 40%;
-  padding: 10px;
-  margin: 10px;
-}
-.instant-reward .media img {
-  border-radius: 10px;
-}
 
-.competition-details i,
-.assess-applicants i,
-.social-gallery i,
-.instant-reward i {
-  padding: 15px;
-  font-size: 3rem;
-  border-radius: 10px;
+.instant-reward .text {
+  padding: 20px;
+  width: 80%;
+}
+.instant-reward .text h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.instant-reward .text p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.instant-reward button {
+  padding: 10px 0;
+  margin: 20px 10px;
+  background: transparent;
   color: #fff;
-  margin-bottom: 10px;
+  border: none;
+  border-bottom: 3px solid #f64c72;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(246, 76, 114, 1) 50%
+  );
+  background-size: 220%;
+  transition: all 0.3s;
+}
+.instant-reward button:hover {
+  background-size: -100%;
+  background-position: 100%;
 }
 @media screen and (max-width: 600px) {
-  .competition-details .text,
-  .assess-applicants .text,
-  .social-gallery .text,
-  .instant-reward .text {
-    flex-basis: 60%;
-    text-align: center;
+  .instant-reward {
+    background-image: linear-gradient(
+        180deg,
+        rgba(36, 37, 130, 0.3) 0%,
+        rgba(36, 37, 130, 1)
+      ),
+      url("./images/reward.jpg");
   }
-}
-.competition-details button,
-.instant-reward button {
-  padding: 10px 15px;
-  margin: 10px;
-  background: #f64c72;
-  color: #fff;
-  border: #f64c72 solid 1px;
-  border-radius: 30px;
-}
-
-.social-gallery button,
-.assess-applicants button {
-  padding: 10px 15px;
-  margin: 10px;
-  background: rgb(52, 226, 168);
-  border: solid 1px rgb(52, 226, 168);
-  border-radius: 30px;
-}
-
-.competition-details .learn,
-.instant-reward .learn,
-.social-gallery .learn,
-.assess-applicants .learn {
-  background: #f64c72;
-  color: white;
-  border: solid 1px #f64c72;
+  .instant-reward .text {
+    width: 100%;
+  }
+  .instant-reward .text h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+  .instant-reward .text p {
+    font-size: 18px;
+  }
 }
 
 /*Footer*/
 .host-competition {
-  padding-top: 10px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -684,13 +761,10 @@ a {
 
 .competitions_list .competition h3 {
   font-size: x-large;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .competitions_list .competition p {
   margin: 10px;
   color: white;
-  font-family: "Lucida Sans";
 }
 .competitions_list .competition p i {
   color: #f64c72;
@@ -706,7 +780,7 @@ a {
 
 /*competition-page*/
 .compp {
-  background-color: #2f2fa23d; 
+  background-color: #2f2fa23d;
 }
 .comp-share {
   padding: 0 10px;
@@ -912,13 +986,11 @@ a {
 .profile-grid .details h1 {
   margin: 20px auto;
   font-size: x-large;
-  font-family: sans-serif;
   color: #553d67;
 }
 .profile-grid .details p {
   margin: 20px auto;
   font-size: large;
-  font-family: sans-serif;
   color: #553d67;
 }
 .profile-form {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+ 
 class Landing extends Component {
   state = {};
-  render() {
+  render() { 
     return (
       <div className="landing">
         <h1> 
