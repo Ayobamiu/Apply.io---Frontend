@@ -1,16 +1,15 @@
 ## Overview
 
-Apply_io is a platform where to host competitions and invites others to paarticipate. <br />
-start using [Apply_io](https://apply-dot-to-front.herokuapp.com/) now <br />
-See scrrenshot below:<br />
+`Apply_io is` a platform to host competitions and invite others to participate. start using [Apply_io](https://apply-dot-to-front.herokuapp.com/) now. <br />
+See screenshot below:<br />
 <img src="https://apply-to-usman.s3.eu-west-2.amazonaws.com/apply_to_screen.png">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Features
 
-### `Django-Rest-Framework API` <br />
-### `Django Alluth` for Authentication <br />
+### `Django-Rest-Framework` API <br />
+### `Django Allauth` for Authentication <br />
 ### Design Done Purely `HTML` and `CSS` <br />
 ### `ReactJS` Library for FrontEnd
 
