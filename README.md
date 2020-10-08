@@ -1,6 +1,6 @@
 ## Overview
 
-`Apply_io is` a platform to host competitions and invite others to participate. start using [Apply_io](https://apply-dot-to-front.herokuapp.com/) now. <br />
+`Apply_io` is a platform to host competitions and invite others to participate. start using [Apply_io](https://apply-dot-to-front.herokuapp.com/) now. <br />
 See screenshot below:<br />
 <img src="https://apply-to-usman.s3.eu-west-2.amazonaws.com/apply_to_screen.png">
 
