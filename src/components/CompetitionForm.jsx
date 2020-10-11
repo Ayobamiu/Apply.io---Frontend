@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { getLoggedInUser } from "./user";
-import NavBar from './NavBar';
+import NavBar from "./NavBar";
 
 class CompetitionForm extends Component {
   state = {
     data: {
-      details: "", 
+      details: "",
       max_entry: "",
       rules: "",
       reg_fee: "",
@@ -38,24 +38,27 @@ class CompetitionForm extends Component {
 
     const data = new FormData();
     const user = getLoggedInUser();
-    data.append("details", this.state.data.details);
-    data.append("max_entry", this.state.data.max_entry);
-    data.append("rules", this.state.data.rules);
-    data.append("reg_fee", this.state.data.reg_fee);
-    data.append("media", this.state.data.media);
-    data.append("category", this.state.data.category);
-    data.append("locality", this.state.data.locality);
-    data.append("prize", this.state.data.prize);
+    data.append("details", e.target.details.value);
+    data.append("max_entry", e.target.max_entry.value);
+    data.append("rules", e.target.rules.value);
+    data.append("reg_fee", e.target.reg_fee.value);
+    data.append("media", e.target.media.files[0]);
+    data.append("category", e.target.category.value);
+    data.append("locality", e.target.locality.value);
+    data.append("prize", e.target.prize.value);
     data.append("organizer", user.user_id);
-
+    console.log(REACT_APP_BASE_URL);
+    console.log(data);
+    console.log(user);
     axios.post(`${REACT_APP_BASE_URL}/api/competition/`, data).then((res) => {
       window.location = "/competitions";
     });
   };
   render() {
+    if (!getLoggedInUser()) window.location = "/login";
     return (
       <div className="competition-form">
-        <NavBar/>
+        <NavBar />
         <h3>Add A New Competition</h3>
         <form onSubmit={this.handleSubmit}>
           <textarea
@@ -86,13 +89,23 @@ class CompetitionForm extends Component {
             onChange={this.handleChange}
             placeholder="Registration Fee"
           />
-          <input
-            type="text"
+
+          <select
             name="category"
             value={this.state.data.category}
             onChange={this.handleChange}
-            placeholder="Category of Competition. e.g. Sport.."
-          />
+          >
+            <option value="">--- Select Category ---</option>
+            <option value="football">football</option>
+            <option value="hackathon">hackathon</option>
+            <option value="oratory">oratory</option>
+            <option value="coding">coding</option>
+            <option value="dance">dance</option>
+            <option value="fashion">fashion</option>
+            <option value="school">school</option>
+            <option value="racing">racing</option>
+            <option value="sport">sport</option>
+          </select>
           <input
             type="text"
             name="locality"

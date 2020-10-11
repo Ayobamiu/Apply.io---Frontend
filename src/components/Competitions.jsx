@@ -11,11 +11,12 @@ class Competitions extends Component {
   };
   async componentDidMount() {
     const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
-    const {
-      data: competitions,
-    } = await axios.get(`${REACT_APP_BASE_URL}/api/competition/`, {
-      headers: { "Content-Type": "application/json" },
-    });
+    const { data: competitions } = await axios.get(
+      `${REACT_APP_BASE_URL}/api/competition/`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     this.setState({
       competitions,
     });
@@ -62,7 +63,7 @@ class Competitions extends Component {
             id="competition_category"
             onChange={this.handleSelect}
           >
-            <option value="">--- Select a Category ---</option>
+            <option value="">All Categories</option>
             <option value="football">Football</option>
             <option value="hackathon">Hackathon</option>
             <option value="oratory">Oratory</option>
@@ -74,30 +75,43 @@ class Competitions extends Component {
             <option value="sport">Sport</option>
           </select>
         </div>
-        <div className="competitions_list">
-          {filtered.map((competition) => (
-            <Link key={competition.id} to={`/competition/${competition.slug}`}>
-              <div className="competition">
-                <h3>{competition.title}</h3>
-                <p>
-                  <i className="fa fa-money-check-alt"></i> ${competition.prize}
-                </p>
-                <div className="bottom">
-                  <p>
-                    <i className="fa fa-layer-group"></i> {competition.category}
-                  </p>
-                  <p>
-                    <i className="fa fa-location-arrow"></i>{" "}
-                    {competition.locality}
-                  </p>
-                  <p>
-                    Registration :{" "}
-                    {competition.reg_fee === 0 ? "Free" : competition.reg_fee}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="competitions-page_competitions">
+          <div className="competitions_list">
+            {filtered.length === 0 ? (
+              <p style={{ textAlign: "center", marginTop: "100px" }}>
+                0 results found{" "}
+              </p>
+            ) : (
+              filtered.map((competition) => (
+                <Link
+                  key={competition.id}
+                  to={`/competition/${competition.slug}`}
+                >
+                  <div className="competition">
+                    <h3 className="competition__title">{competition.title}</h3>
+                    <div className="competition__others">
+                      <p className="competition__prize">
+                        <small>Prize</small>
+                        <p> N{competition.prize}</p>
+                      </p>
+                      <p className="competition__reg">
+                        <small>Reg fee</small>
+                        <p>
+                          {competition.reg_fee === 0
+                            ? "Free"
+                            : "N" + competition.reg_fee}
+                        </p>
+                      </p>
+                    </div>
+                    <p className="competition__type">{competition.category}</p>
+                    <p className="competition__locality">
+                      {competition.locality}
+                    </p>
+                  </div>
+                </Link>
+              ))
+            )}
+          </div>
         </div>
       </div>
     );
