@@ -90,18 +90,18 @@ class Competitions extends Component {
                   <div className="competition">
                     <h3 className="competition__title">{competition.title}</h3>
                     <div className="competition__others">
-                      <p className="competition__prize">
+                      <div className="competition__prize">
                         <small>Prize</small>
                         <p> N{competition.prize}</p>
-                      </p>
-                      <p className="competition__reg">
+                      </div>
+                      <div className="competition__reg">
                         <small>Reg fee</small>
                         <p>
                           {competition.reg_fee === 0
                             ? "Free"
                             : "N" + competition.reg_fee}
                         </p>
-                      </p>
+                      </div>
                     </div>
                     <p className="competition__type">{competition.category}</p>
                     <p className="competition__locality">

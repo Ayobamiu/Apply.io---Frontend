@@ -9,7 +9,7 @@ export function getLoggedInUser() {
   } catch (error) {
     return null;
   }
-}
+} 
 
 export function getProfiles() {
   return axios.get(`${REACT_APP_BASE_URL}/api/profile/`, {
